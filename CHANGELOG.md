@@ -19,6 +19,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Bump `inferno` to 0.12 to deduplicate transitive deps
 - Drop the redundant direct `prost-derive` dependency (the derive macro is
   re-exported by `prost` via its default `derive` feature)
+- Bump `criterion` to 0.8. The `criterion::profiler::Profiler` trait that
+  `PProfProfiler` implements is unchanged, but benchmarks that use
+  `PProfProfiler` must use criterion 0.8 as well. The `criterion` example uses
+  `std::hint::black_box`, which replaces `criterion::black_box` (deprecated
+  since criterion 0.6)
 
 ## [0.15.0] - 202
 

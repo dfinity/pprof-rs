@@ -1,6 +1,7 @@
 #[macro_use]
 extern crate criterion;
-use criterion::{black_box, BenchmarkId, Criterion};
+use criterion::{BenchmarkId, Criterion};
+use std::hint::black_box;
 
 use pprof::criterion::{Output, PProfProfiler};
 
